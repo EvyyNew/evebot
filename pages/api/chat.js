@@ -94,7 +94,7 @@ export default async function handler(req, res) {
   try {
     const { messages } = req.body;
     const completion = await openai.createChatCompletion({
-      model: 'gpt-4.1-nano-2025-04-14',
+      model: 'gpt-3.5-turbo',
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         ...(messages || []),
