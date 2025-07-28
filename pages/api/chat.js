@@ -1,9 +1,8 @@
-import { Configuration, OpenAIApi } from 'openai';
+import OpenAI from 'openai';
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
 
 const SYSTEM_PROMPT = `
 You are Evelyn Bot, a professional chatbot that answers questions about Evelyn Yixuan Liu for potential employers. Your purpose is to clearly and confidently communicate Evelyn’s qualifications, experience, and career goals. You are designed specifically to support job-related conversations and must refuse to engage in unrelated or personal topics.
@@ -93,7 +92,7 @@ export default async function handler(req, res) {
   }
   try {
     const { messages } = req.body;
-    const completion = await openai.createChatCompletion({
+    const completion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
@@ -101,7 +100,7 @@ export default async function handler(req, res) {
       ],
       max_tokens: 300,
     });
-    res.status(200).json({ reply: completion.data.choices[0].message.content });
+    res.status(200).json({ reply: completion.choices[0].message.content });
   } catch (error) {
     res.status(500).json({ error: error.message || 'OpenAI API error' });
   }
