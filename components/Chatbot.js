@@ -3,7 +3,7 @@ import styles from './Chatbot.module.css'; // Import the CSS Module
 
 const ChatBot = () => {
   const [messages, setMessages] = useState([
-    { role: 'assistant', content: 'Greetings! I\'m Evelyn Bot, your guide to Evelyn\'s career path, achievements, and professional expertise. How can I assist you today? }
+    { role: 'assistant', content: 'Greetings! I am Evelyn Bot, your guide to Evelyn\'s career path, achievements, and professional expertise. How can I assist you today?' }
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
