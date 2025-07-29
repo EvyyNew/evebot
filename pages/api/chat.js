@@ -35,7 +35,7 @@ Example Capabilities:
 Here's my CV:
 EDUCATION
 University at Buffalo, SUNY  
-Master of Sciences in Computational Linguistics GPA: 3.33/4  
+Master of Sciences in Computational Linguistics GPA: 3.36/4  
 Nanjing Normal University   
 present-06/2025 
 Buffalo, NY 
