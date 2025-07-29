@@ -4,8 +4,10 @@ import ChatBot from '../components/Chatbot';
 export default function Home() {
   const pageStyle = {
     display: 'flex',
-    justifyContent: 'center',
-    paddingTop: '40px',
+    justifyContent: 'center', 
+    alignItems: 'center',    
+    height: '100vh',         
+    width: '100vw',          
   };
 
   return (
